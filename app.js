@@ -16,6 +16,7 @@ require('./lib/connectiondb');
 //Modelos
 require('./models/Anuncios');
 require('./models/Usuarios');
+require('./models/Tokens');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,6 +36,7 @@ app.use('/users', users);
 //rutas del API
 app.use('/api/v1/anuncios', require('./routes/api/v1/anuncios'));
 app.use('/api/v1/usuarios', require('./routes/api/v1/usuarios'));
+app.use('/api/v1/tokens', require('./routes/api/v1/tokens'));
 
 
 // catch 404 and forward to error handler
