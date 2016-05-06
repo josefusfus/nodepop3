@@ -6,11 +6,17 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Anuncio = mongoose.model('Anuncio');
 
-router.post('/', function (req,res) {
+router.post('/', function (req,res, next) {
     
    var anuncio = new Anuncio(req.body);
-    console.log(anuncio);
-    
+    anuncio.save(function (err, saved) {
+        if(err){
+            next(err);
+            return;
+        }
+        res.json({success:true, saved: saved});
+
+    });
 });
 
 module.exports = router;
