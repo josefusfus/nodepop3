@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=nodepop:* PORT=3000 node ./bin/www"
+    "start": "DEBUG=nodepop:* PORT=3000 node ./bin/www",
+    "installBD": "install_bd.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
