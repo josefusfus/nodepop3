@@ -12,6 +12,17 @@ var anuncioSchema = mongoose.Schema({
     tags: [String]
 });
 
-//Asignamos al modelo
+//Creamos modelo estatico
 
-mongoose.model('Anuncio', anuncioSchema);
+
+anuncioSchema.statics.list = function (filter, start, limit, sort, cb) {
+    var query = Anuncio.find(filter);
+    query.skip(start);
+    query.limit(limit);
+    query.sort(sort);
+    query.exec(cb);
+};
+
+
+//Asignamos al modelo
+var Anuncio = mongoose.model('Anuncio', anuncioSchema);

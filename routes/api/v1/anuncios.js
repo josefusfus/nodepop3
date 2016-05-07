@@ -6,14 +6,27 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Anuncio = mongoose.model('Anuncio');
 
-router.get('/', function (req,res) {
+
+// Get para devolver resultados segun parametros
+
+router.get('/', function (req,res, next) {
     
-    Anuncio.find().exec(function (err, rows) {
-        if (err){
-            next(err);
-            return
+    var name = req.query.name;
+    var start = parseInt(req.query.start || 0);
+    var limit = parseInt(req.query.limit || null);
+    var sort = req.query.sort || null;
+
+    var criteria = {};
+
+    if (typeof name !== 'undefined'){
+        criteria.name = name;
+    }
+
+    Anuncio.list(criteria, start, limit , sort, function (err, rows) {
+        if(err){
+            return res.json({success: false, error: err});
         }
-        res.json({success:true, rows: rows});
+        res.json({success: true, rows : rows});
     });
 });
 
