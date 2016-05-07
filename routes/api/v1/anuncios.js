@@ -14,8 +14,6 @@ router.get('/', function (req,res, next) {
     var nombre = req.query.nombre;
     var tags = req.query.tags;
     var venta = req.query.venta;
-    var min = req.query.min;
-    var max = req.query.max;
     var start = parseInt(req.query.start || 0);
     var limit = parseInt(req.query.limit || null);
     var sort = req.query.sort || null;
