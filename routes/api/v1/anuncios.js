@@ -6,6 +6,11 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Anuncio = mongoose.model('Anuncio');
 
+//Autenticación
+
+var jwtAuth = require('../../../lib/jwtAuth');
+router.use(jwtAuth());
+
 
 // Get para devolver resultados segun parametros
 

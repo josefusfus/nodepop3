@@ -1,6 +1,7 @@
 "use strict";
 
 var jwt = require('jsonwebtoken');
+var config = require('../../../local_config');
 
 var express = require('express');
 var router = express.Router();
@@ -37,8 +38,8 @@ router.post('/authenticate', function (req, res) {
             return res.status(401).json({success:false, err:'Auth Failed. Invalid Password'});
         }
 
-        var token = jwt.sign({id: email._id},'gsdgsdgsgsdg',{
-            expiresIn:2
+        var token = jwt.sign({id: email._id},config.jwt.secret,{
+            expiresIn:'2 days'
         });
 
         res.json({success:true, toke:token});
