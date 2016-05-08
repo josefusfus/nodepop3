@@ -5,9 +5,18 @@ var mongoose = require('mongoose');
 //Creamos Esquema
 
 var usuarioSchema = mongoose.Schema({
-    nombre: String,
-    email: String,
-    clave: String
+    nombre:{
+        type: String,
+        required:true
+    },
+    email:{
+        type: String,
+        required:true
+    },
+    clave: {
+        type: String,
+        required:true
+    }
 });
 
 

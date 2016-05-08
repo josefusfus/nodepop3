@@ -1,0 +1,12 @@
+[
+  {
+    "nombre": "usuario5",
+    "email": "usuario5@hotmail.com",
+    "clave": 12345
+  },
+  {
+    "nombre": "usuario6",
+    "email": "usuario6@hotmail.com",
+    "clave": 54321
+  }
+]

@@ -1,5 +1,5 @@
-{
-  "anuncios": [
+
+  [
     {
       "nombre": "Bicicleta",
       "venta": true,
@@ -15,4 +15,3 @@
       "tags": [ "lifestyle", "mobile"]
     }
   ]
-}
