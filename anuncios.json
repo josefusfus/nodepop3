@@ -13,5 +13,12 @@
       "precio": 50.00,
       "foto": "iphone.png",
       "tags": [ "lifestyle", "mobile"]
+    },
+    {
+      "nombre": "iPhone 6S",
+      "venta": false,
+      "precio": 500.00,
+      "foto": "iphone6S.png",
+      "tags": [ "technologic", "mobile"]
     }
   ]

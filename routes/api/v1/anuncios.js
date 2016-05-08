@@ -6,7 +6,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Anuncio = mongoose.model('Anuncio');
 
-//Autenticación
+//Usamos autenticación
 
 var jwtAuth = require('../../../lib/jwtAuth');
 router.use(jwtAuth());
@@ -46,6 +46,8 @@ router.get('/', function (req,res, next) {
         res.json({success: true, rows : rows});
     });
 });
+
+// Post para crear anuncio
 
 router.post('/', function (req,res, next) {
     
